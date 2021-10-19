@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/home/home.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="logo">
+        <h2>DoorToDoor</h2>
+      </div>
+
+      <div class="links">
+        <ul>
+          <li><a href=""> HOME</a></li>
+          <li><a href="/services/Electrician">SERVICES</a></li>
+          <li><a href="">ABOUT</a></li>
+          <% if(loggedIn){ %>
+          <li><a href="/logout">LOGOUT</a></li>
+          <% }else{ %>
+          <li><a href="/login">LOGIN</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="background-div">
+      <img src="/images/home-bg.jpg" />
+      <form action="/" method="POST">
+        <input type="text" name="city" placeholder="Enter City" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <img src="/images/electrician.svg" />
+        <h3>Electrician</h3>
+      </div>
+      <div class="card">
+        <img src="/images/plumber.svg" />
+        <h3>Plumber</h3>
+      </div>
+      <div class="card">
+        <img src="/images/salon.svg" />
+        <h3>Salon</h3>
+      </div>
+      <div class="card">
+        <img src="/images/carpenter3.svg" />
+        <h3>Carpenter</h3>
+      </div>
+      <div class="card">
+        <img src="/images/pesticide.svg" />
+        <h3>Pest Control</h3>
+      </div>
+      <div class="card">
+        <img src="/images/painter.svg" />
+        <h3>Painter</h3>
+      </div>
+      <div class="card">
+        <img src="/images/repair.svg" />
+        <h3>Repair</h3>
+      </div>
+      <div class="card">
+        <img src="/images/janitor.svg" />
+        <h3>Cleaning</h3>
+      </div>
+    </div>
+  </body>
+</html>

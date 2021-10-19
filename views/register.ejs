@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/register/register.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form
+        action="/register"
+        method="POST"
+        id="regForm"
+        enctype="multipart/form-data"
+      >
+        <div class="form-control">
+          <label for="custname">Name:</label>
+          <input type="text" name="custname" id="custname" />
+        </div>
+
+        <div class="form-control">
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" />
+        </div>
+
+        <div class="form-control">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
+        </div>
+
+        <div class="form-control">
+          <label for="contact">Contact:</label>
+          <input type="text" name="contact" id="contact" />
+        </div>
+
+        <div class="providerInput" id="providerInput">
+          <div class="form-control">
+            <label for="service">Service:</label>
+            <input type="text" name="service" id="service" />
+          </div>
+
+          <div class="form-control">
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" />
+          </div>
+
+          <div class="form-control">
+            <label for="experience">Experience (In years):</label>
+            <input type="text" name="experience" id="experience" />
+          </div>
+
+          <div class="form-control">
+            <label for="providerImage">Upload photo:</label>
+            <input
+              type="file"
+              name="providerImage"
+              id="providerImage"
+              accept="image/*"
+            />
+          </div>
+        </div>
+
+        <div class="form-control">
+          <div class="type">
+            <input
+              type="radio"
+              id="customer"
+              name="type"
+              value="customer"
+              class="typeInput"
+              onclick="show(0)"
+            />
+            <label for="customer">Register as Customer</label><br />
+          </div>
+          <div class="type">
+            <input
+              type="radio"
+              id="provider"
+              name="type"
+              value="provider"
+              class="typeInput"
+              onclick="show(1)"
+            />
+            <label for="provider">Register as Service Provider</label><br />
+          </div>
+        </div>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <script>
+      function show(value) {
+        if (value == 1) {
+          document.getElementById("providerInput").style.display = "block";
+          //   document.getElementById("regForm").action = "/home/provider";
+        } else {
+          document.getElementById("providerInput").style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -11,63 +11,77 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="/css/services/services.css" />
   </head>
   <body>
     <navbar>
       <h2>DoorToDoor</h2>
       <ul>
-        <li><a href="">HOME</a></li>
-        <li><a href="">SERVICES</a></li>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/services/Electrician">SERVICES</a></li>
         <li><a href="">ABOUT</a></li>
-        <li><a href="">LOGIN/SIGNUP</a></li>
+        <li><a href="/logout">LOGOUT</a></li>
       </ul>
     </navbar>
 
     <div class="links">
       <ul>
-        <li><a href="#electricians">Electrician</a></li>
-        <li><a href="#plumbers">Plumber</a></li>
-        <li><a>Salon</a></li>
-        <li><a href="#carpenters">Carpenter</a></li>
-        <li><a>Pest Control</a></li>
-        <li><a>Painting</a></li>
-        <li><a>Repair</a></li>
-        <li><a>Cleaning</a></li>
+        <li><a href="/services/Electrician">Electrician</a></li>
+        <li><a href="/services/Plumber">Plumber</a></li>
+        <li><a href="/services/Salon">Salon</a></li>
+        <li><a href="/services/Carpenter">Carpenter</a></li>
+        <li><a href="/services/Pestcontrol">Pest Control</a></li>
+        <li><a href="/services/Painting">Painting</a></li>
+        <li><a href="/services/Repair">Repair</a></li>
+        <li><a href="/services/Cleaning">Cleaning</a></li>
       </ul>
     </div>
     <section class="display" id="electricians">
+      
       <div class="heading">
-        <h2>Electricians</h2>
-        <input
+        <% if(city === "1"){ %>
+        <h2><%= profession %>s</h2>
+        <% }else{ %>
+          <h2><%= profession %>s in <%= city%></h2>
+          <% } %>
+        
+        <!-- <input
           type="text"
           name="pincode"
           id="pincode"
           placeholder="Enter Pincode"
-        />
+        /> -->
       </div>
-      <div class="results">
+    
+       <div class="results">
         <div class="heading"></div>
         <div class="cards">
+          <% services.forEach(function(service){ %>
           <article class="card">
-            <div class="image"></div>
+            <div class="image">
+              <% if(service.providerImage){ %>
+                <img src="/uploads/<%= service.providerImage%>" alt="providerImage" />
+              <% } %>
+            </div>
             <div class="content">
               <div class="info">
-                <h2>Akash Khatri</h2>
-                <p>Mumbai, Maharashtra</p>
-                <p>4.8</p>
-                <p>Experience:- 2years</p>
+                <h2><%= service.custname %></h2>
+                <p><%= service.city %></p>
+                <p>Rating:- 4.8</p>
+                <p>Experience:- <%= service.experience %> years</p>
               </div>
               <div class="speciality">
                 <h3>Specializes in:-</h3>
-                <p>Pipe fitting</p>
-                <p>Water Leakage</p>
-                <button>Book Appointment</button>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <button><a href="/appointment/<%= service._id%>">Book Appointment</a></button>
               </div>
             </div>
           </article>
 
-          <article class="card">
+          <% }) %>
+
+          <!-- <article class="card">
             <div class="image"></div>
             <div class="content">
               <div class="info">
@@ -243,7 +257,7 @@
             </div>
           </article>
         </div>
-      </div>
+      </div> -->
     </section>
   </body>
 </html>

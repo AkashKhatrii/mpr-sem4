@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+$black: #353535;
+$blue: #284b63;
+$grey: #d9d9d9;
+$green: #3c6e71;
+
+nav {
+  display: flex;
+  padding: 1rem;
+  background: #353535;
+  opacity: 0.65;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  height: 10vh;
+
+  .logo {
+    h2 {
+      color: white;
+    }
+  }
+
+  .links ul {
+    display: flex;
+    list-style: none;
+
+    li {
+      padding: 5px 10px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+        z-index: 3;
+      }
+    }
+  }
+}
+
+.background-div {
+  height: 70vh;
+  width: 100vw;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cards {
+  position: absolute;
+  top: 40%;
+  padding: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .card {
+    height: 200px;
+    width: 260px;
+    padding: 5px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+    background-color: $green;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      height: 150px;
+      margin-bottom: 10px;
+      //   mix-blend-mode: soft-light;
+      background-color: $green;
+      color: black;
+    }
+
+    .carpenter {
+      height: 500px;
+    }
+
+    h3 {
+      align-self: center;
+      mix-blend-mode: soft-light;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+form {
+  input {
+    height: 50px;
+    padding: 5px 10px;
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  button {
+    height: 50px;
+    width: 85px;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+  }
+}
