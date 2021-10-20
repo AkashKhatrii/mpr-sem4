@@ -129,6 +129,7 @@ main {
         align-items: center;
 
         .card {
+          position: relative;
           padding: 12px;
           display: flex;
           width: 85%;
@@ -149,6 +150,17 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+          }
+        }
+
+        span {
+          position: absolute;
+          bottom: 8px;
+          right: 20px;
+          a {
+            text-decoration: none;
+            color: coral;
+            font-weight: 700;
           }
         }
       }

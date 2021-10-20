@@ -10,6 +10,7 @@ const appointmentSchema = new Schema({
     time: String,
     phone: String,
     address: String,
+    done: Boolean,
 });
 
 const Appointment = connection.model('Appointment', appointmentSchema);

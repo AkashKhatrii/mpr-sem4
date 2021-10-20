@@ -80,7 +80,7 @@ homeRouter.get("/home/provider", (req, res) => {
    
     if(req.isAuthenticated()){
         console.log(req.user)
-        Appointment.find({ providerId: req.user.id}).then(( appointments ) => {
+        Appointment.find({ providerId: req.user.id, done: false}).then(( appointments ) => {
             // console.log(result)
             User.findOne({ _id: req.user.id}).then((user) => {
                 
@@ -95,6 +95,22 @@ homeRouter.get("/home/provider", (req, res) => {
     }
         
     
+})
+
+homeRouter.get("/user/appointments", (req, res) => {
+
+    // Appointment.find({userId: req.user.id}).then((result) => {
+    //     if(result.length > 0){
+    //     User.findOne({_id: result.providerId}).then((user) =>{
+    //         console.log(user)
+    //         res.render("userAppointment", { result: result, name: user.custname, contact: user.contact})
+    //     })}
+    //     else{
+    //         res.render("userAppointment", {result: []})
+    //     }
+        
+    // })
+    res.render("userAppointment")
 })
 
 homeRouter.get("/users", (req, res) => {

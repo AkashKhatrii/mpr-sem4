@@ -46,16 +46,24 @@ router.get("/appointment/:providerId", (req, res) => {
 
 router.post("/appointment/:providerId", (req, res) => {
     const newAppointment = new Appointment({
+        userId: req.user.id,
         providerId: req.params.providerId,
         userName: req.user.custname,
         date: req.body.date,
         time: req.body.time,
         phone: req.user.contact,
-        address: req.body.address
+        address: req.body.address,
+        done: false
     })
 
     newAppointment.save()
     res.redirect("/")
+})
+
+router.get("/done/:id", (req, res) => {
+    Appointment.findOneAndUpdate({_id: req.params.id}, {$set: {done: true}}).then((result) => {
+        res.redirect("/home/provider")
+    })
 })
 
 module.exports = router;

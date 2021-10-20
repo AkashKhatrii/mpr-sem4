@@ -159,6 +159,7 @@ main .right .content .cards {
 }
 
 main .right .content .cards .card {
+  position: relative;
   padding: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -194,5 +195,17 @@ main .right .content .cards .card .card-right {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+main .right .content .cards span {
+  position: absolute;
+  bottom: 8px;
+  right: 20px;
+}
+
+main .right .content .cards span a {
+  text-decoration: none;
+  color: coral;
+  font-weight: 700;
 }
 /*# sourceMappingURL=providerHome.css.map */

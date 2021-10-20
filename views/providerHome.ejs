@@ -26,7 +26,7 @@
           <h1><%= user.custname%></h1>
           <p>Service: <%= user.service%></p>
           <p>City: <%= user.city%></p>
-          <p>Experience: <%= user.experience%> years</p>
+          <p>Experience: <%= user.experience%> year(s)</p>
         </div>
         <div class="image">
           <% if(user.providerImage){ %>
@@ -52,6 +52,7 @@
                 <p><%= item.address%></p>
                 <p><%= item.phone%></p>
               </div>
+              <span><a href="/done/<%= item._id%>">Mark as done</a></span>
             </article>
             <% }) %>
           </div>
