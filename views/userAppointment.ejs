@@ -22,20 +22,28 @@
         </ul>
       </div>
     </nav>
-    <div class="left">
-      <div class="user">
-      
-        </div>
-      </div>
-    </div>
-    <main>
+
+    <main style="left: 0">
       <div class="right">
         <div class="content">
           <div class="heading">
             <h2>APPOINTMENTS</h2>
           </div>
+          <% var i = 0 %>
           <div class="cards">
-            
+            <% result.forEach((item) => { %>
+            <article class="card">
+              <div class="card-left">
+                <h3><%= providers[i].custname %></h3>
+                <p><%= providers[i].service %></p>
+                <p><%= item.date%> | <%= item.time%></p>
+              </div>
+              <div class="card-right">
+                <p><%= item.address%></p>
+                <p><%= providers[i].contact%></p>
+              </div>
+            </article>
+            <% i = i + 1%> <% }) %>
           </div>
         </div>
       </div>
