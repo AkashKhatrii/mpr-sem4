@@ -52,6 +52,7 @@ nav {
   height: 70vh;
   width: 100vw;
   position: relative;
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -70,6 +71,7 @@ nav {
 .cards {
   position: absolute;
   top: 40%;
+  width: 100vw;
   padding: 8rem;
   display: flex;
   flex-wrap: wrap;
@@ -92,7 +94,7 @@ nav {
       margin-bottom: 10px;
       //   mix-blend-mode: soft-light;
       background-color: $green;
-      color: black;
+      color: white;
     }
 
     .carpenter {
@@ -129,4 +131,138 @@ form {
     background-color: black;
     color: white;
   }
+}
+
+#about {
+  margin-top: 63vh;
+  width: 100vw;
+
+  .about-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    .left {
+      width: 40%;
+      height: 400px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding-right: 45px;
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: $black;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-right: 40px;
+      }
+
+      button {
+        width: 180px;
+        height: 50px;
+        border: none;
+        background-color: $black;
+        border-radius: 10px;
+        margin-top: 40px;
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 1.2rem;
+          letter-spacing: 0.35px;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  width: 100%;
+  height: 345px;
+  box-sizing: border-box;
+  padding: 20px;
+  color: white;
+  margin-top: 55px;
+  background-color: #353535;
+  overflow: hidden;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.75rem;
+}
+.footer-box {
+  padding: 15px;
+}
+.footer-box h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: "Noto Sans JP", sans-serif;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+#footer-box1 p {
+  font-size: 1.2rem;
+}
+#footer-box2 ul {
+  margin: 0 auto;
+}
+#footer-box2 ul li {
+  font-size: 1rem;
+
+  font-family: "Noto Sans JP", sans-serif;
+  padding: 5px 10px;
+}
+#footer-box2 ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+#footer-box3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#footer-box3 input {
+  padding: 10px 10px;
+  margin: 10px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.1rem;
+  outline: none;
+}
+#footer-box3 textarea {
+  padding: 10px 10px;
+  margin: 10px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.1rem;
+  outline: none;
+}
+#footer-box3 button {
+  display: block;
+  margin: 10px auto 10px;
+  padding: 5px 7px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  background-color: white;
+  color: black;
+  outline: none;
+  cursor: pointer;
 }

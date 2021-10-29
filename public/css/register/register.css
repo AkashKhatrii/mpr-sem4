@@ -114,6 +114,12 @@ nav .links ul li a {
   background-color: #d8d8d8;
 }
 
+.wrapper form .form-control textarea {
+  outline: none;
+  padding: 5px;
+  font-size: 1rem;
+}
+
 .wrapper form .form-control .typeInput {
   width: 20px;
   margin-top: 10px;
@@ -188,5 +194,22 @@ nav .links ul li a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.wrapper .side-image-l {
+  width: 700px;
+  margin-right: 80px;
+}
+
+.wrapper .side-image-l img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.wrapper .login-form {
+  padding-right: 30px;
+  margin-left: 30px;
 }
 /*# sourceMappingURL=register.css.map */

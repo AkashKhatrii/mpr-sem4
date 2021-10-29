@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="/css/services/services.css" />
   </head>
   <body>
@@ -26,14 +27,47 @@
 
     <div class="links">
       <ul>
+        <% if(profession === 'Electrician'){ %>
+          <li class="current-l"><a href="/services/Electrician" style="color:black">Electrician</a></li>
+          <% }else{ %>
         <li><a href="/services/Electrician">Electrician</a></li>
+        <% } %>
+        <% if(profession === 'Plumber'){ %>
+          <li class="current-l"><a href="/services/Plumber" style="color:black">Plumber</a></li>
+          <% }else{ %>
         <li><a href="/services/Plumber">Plumber</a></li>
+        <% } %>
+        <% if(profession === 'Salon'){ %>
+          <li class="current-l"><a href="/services/Salon" style="color:black">Salon</a></li>
+          <% }else{ %>
         <li><a href="/services/Salon">Salon</a></li>
+        <% } %>
+        <% if(profession === 'Carpenter'){ %>
+          <li class="current-l"><a href="/services/Carpenter" style="color:black">Carpenter</a></li>
+          <% }else{ %>
         <li><a href="/services/Carpenter">Carpenter</a></li>
+        <% } %>
+        <% if(profession === 'Pestcontrol'){ %>
+          <li class="current-l"><a href="/services/Pestcontrol" style="color:black">Pest Control</a></li>
+          <% }else{ %>
         <li><a href="/services/Pestcontrol">Pest Control</a></li>
+        <% } %>
+        <% if(profession === 'Painting'){ %>
+          <li class="current-l"><a href="/services/Painting" style="color:black">Painting</a></li>
+          <% }else{ %>
         <li><a href="/services/Painting">Painting</a></li>
+        <% } %>
+        <% if(profession === 'Repair'){ %>
+          <li class="current-l"><a href="/services/Repair" style="color:black">Repair</a></li>
+          <% }else{ %>
         <li><a href="/services/Repair">Repair</a></li>
+        <% } %>
+        <% if(profession === 'Cleaning'){ %>
+          <li class="current-l"><a href="/services/Cleaning" style="color:black">Cleaning</a></li>
+          <% }else{ %>
         <li><a href="/services/Cleaning">Cleaning</a></li>
+        <% } %>
+        >
       </ul>
     </div>
     <section class="display" id="electricians">
@@ -67,14 +101,14 @@
             <div class="content">
               <div class="info">
                 <h2><%= service.custname %></h2>
-                <p><%= service.city %></p>
-                <p>Rating:- 4.8</p>
+                <p class="city"><%= service.city %></p>
+                <p><img src="/images/star.png" alt="a bright star"><span>4.8</span> </p>
                 <p>Experience:- <%= service.experience %> years</p>
               </div>
               <div class="speciality">
                 <h3>Specializes in:-</h3>
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
+                <p><%= service.speciality1 %></p>
+                <p><%= service.speciality2 %></p>
                 <button><a href="/appointment/<%= service._id%>">Book Appointment</a></button>
               </div>
             </div>
