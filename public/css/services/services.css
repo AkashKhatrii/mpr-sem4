@@ -107,7 +107,6 @@ navbar ul li a {
   display: -ms-flexbox;
   display: flex;
   height: 90vh;
-  scroll-snap-align: start;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

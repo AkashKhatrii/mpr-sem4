@@ -15,9 +15,10 @@
 
       <div class="links">
         <ul>
-          <li><a href=""> HOME</a></li>
+          <li><a href="/"> HOME</a></li>
           <li><a href="/services/Electrician">SERVICES</a></li>
           <li><a href="">ABOUT</a></li>
+          <li><a href="/user/appointments">APPOINTMENTS</a></li>
           <li><a href="/logout">LOGOUT</a></li>
         </ul>
       </div>
@@ -25,6 +26,7 @@
 
     <main style="left: 0">
       <div class="wrapper">
+        <h1>My Appointments</h1>
         <% var i = 0 %>
         <div class="cards">
           <% result.forEach((item) => { %>
@@ -44,7 +46,7 @@
             </div>
             <div class="card-right">
               <p><%= item.address%></p>
-              <p><%= providers[i].contact%></p>
+              <p>+91 <%= providers[i].contact%></p>
             </div>
           </article>
           <% i = i + 1%> <% }) %>

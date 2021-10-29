@@ -9,6 +9,7 @@ var city = "";
 var providers = [];
 
 homeRouter.post("/", (req, res) => {
+  req.session.searchCity = "";
   if (req.isAuthenticated()) {
     req.session.searchCity = req.body.city;
     res.redirect("/services/Electrician");

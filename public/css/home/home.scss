@@ -72,7 +72,8 @@ nav {
   position: absolute;
   top: 40%;
   width: 100vw;
-  padding: 8rem;
+  padding: 7.5rem;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
