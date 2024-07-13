@@ -10,7 +10,7 @@ const crypto = require('crypto');
 const LocalStrategy = require('passport-local').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
 const MongoStore = require('connect-mongo');
-const connection = require("/Users/u1469481/Desktop/mpr-sem4/utils/connection.js");
+const connection = require("./utils/connection.js");
 
 
 const User = require('./models/User')
