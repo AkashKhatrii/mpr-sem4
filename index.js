@@ -10,6 +10,7 @@ const crypto = require('crypto');
 const LocalStrategy = require('passport-local').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
 const MongoStore = require('connect-mongo');
+const connection = require("/Users/u1469481/Desktop/mpr-sem4/utils/connection.js");
 
 
 const User = require('./models/User')
@@ -66,17 +67,35 @@ passport.use(new LocalStrategy(
             });
 }));
 
+// app.use(session({
+//     secret: process.env.SECRET,
+//     resave: false,
+//     saveUninitialized: true,
+//     store: MongoStore.create({
+//         mongoUrl: process.env.DB_STRING
+//     }),
+//     cookie: {
+//         maxAge: 1000 * 60 * 60 * 24 
+//     }
+// }));
+
+const sessionStore = MongoStore.create({
+    client: connection.getClient(),
+    collection: 'session'
+})
+
+console.log('Hiiii');
 app.use(session({
-    secret: process.env.SECRET,
+    secret: "pj",
     resave: false,
     saveUninitialized: true,
-    store: MongoStore.create({
-        mongoUrl: process.env.DB_STRING
-    }),
+    store: sessionStore,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24 
+        maxAge: 1000 * 60 * 60 * 24 //Equals 24 hours
     }
-}));
+}))
+
+console.log("Worlddd")
 
 passport.serializeUser(function(user, cb) {
     cb(null, user.id);

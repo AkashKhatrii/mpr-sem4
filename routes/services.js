@@ -16,6 +16,7 @@ router.get("/services/:type", (req, res) => {
       console.log("yes", req.session.searchCity);
       User.find({ service: type, city: req.session.searchCity })
         .then((result) => {
+          console.log(result);
           res.render("services", {
             profession: type,
             services: result,
