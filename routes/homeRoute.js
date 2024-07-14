@@ -89,13 +89,11 @@ homeRouter.get("/home/provider", (req, res) => {
 });
 
 homeRouter.get("/user/appointments", async (req, res) => {
-  var result = await Appointment.find({ userId: req.user.id });
-
+  const result = await Appointment.find({ userId: req.user.id });
   for (const item of result) {
-    var user = await User.findOne({ _id: item.providerId });
+    const user = await User.findOne({ _id: item.providerId });
     providers.push(user);
   }
-  console.log(result);
   res.render("userAppointment", { result: result, providers: providers });
 
   // if(result.length > 0){

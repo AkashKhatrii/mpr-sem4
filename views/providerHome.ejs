@@ -29,8 +29,12 @@
           <p>Experience: <%= user.experience%> year(s)</p>
           <p>Specialties:</p>
           <ul>
-            <li><%= user.speciality1 %></li>
-            <li><%= user.speciality2 %></li>
+            <% if (user.speciality1) { %>
+              <li><%= user.speciality1 %></li>
+            <% } %>
+            <% if (user.speciality2) { %>
+              <li><%= user.speciality2 %></li>
+            <% } %>
           </ul>
         </div>
         <div class="image">

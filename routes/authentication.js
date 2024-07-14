@@ -57,7 +57,8 @@ router.post("/register", upload, (req, res) => {
   const salt = saltHash.salt;
   const hash = saltHash.hash;
 
-  var specialities = req.body.speciality.split(",");
+  var specialities = req.body.speciality ? req.body.speciality.split(",") : [];
+  const providerImage = req.file ? req.file.filename : 'default-image.png';
   var newUser = {};
   if (type === "customer") {
     newUser = new User({
@@ -79,9 +80,9 @@ router.post("/register", upload, (req, res) => {
       city: req.body.city,
       experience: req.body.experience,
       isProvider: true,
-      providerImage: req.file.filename,
-      speciality1: specialities[0],
-      speciality2: specialities[1],
+      providerImage: providerImage,
+      speciality1: specialities[0] || '',
+      speciality2: specialities[1] || '',
     });
   }
 
