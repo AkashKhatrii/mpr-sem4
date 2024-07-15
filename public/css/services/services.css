@@ -17,7 +17,7 @@ html {
       scroll-snap-type: y mandatory;
 }
 
-navbar {
+nav {
   height: 10vh;
   width: 100%;
   padding: 20px;
@@ -35,22 +35,22 @@ navbar {
           align-items: center;
 }
 
-navbar h2 {
+nav h2 {
   color: white;
 }
 
-navbar ul {
+nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
 
-navbar ul li {
+nav ul li {
   padding: 5px 15px;
 }
 
-navbar ul li a {
+nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: 700;

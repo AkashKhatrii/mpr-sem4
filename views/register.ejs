@@ -31,6 +31,11 @@
       >
         <div class="form-content">
           <div class="form-left">
+            <% if (typeof error !== 'undefined') { %>
+              <div class="error-message">
+                <p><%= error %></p>
+              </div>
+            <% } %>
             <div class="form-control">
               <label for="custname">Name:</label>
               <input

@@ -49,8 +49,13 @@ router.post(
   }
 );
 
-router.post("/register", upload, (req, res) => {
+router.post("/register", upload, async (req, res) => {
   var type = req.body.type;
+  const { username, password, custname, contact, service, city, experience, speciality } = req.body;
+  const existingUser = await User.findOne({ username });
+  if (existingUser) {
+    return res.render("register", { error: "Username already exists. Please choose another one." });
+  }
 
   const saltHash = genPassword(req.body.password);
 
@@ -60,25 +65,26 @@ router.post("/register", upload, (req, res) => {
   var specialities = req.body.speciality ? req.body.speciality.split(",") : [];
   const providerImage = req.file ? req.file.filename : 'default-image.png';
   var newUser = {};
+
   if (type === "customer") {
     newUser = new User({
-      username: req.body.username,
+      username: username,
       hash: hash,
       salt: salt,
-      custname: req.body.custname,
-      contact: req.body.contact,
+      custname: custname,
+      contact: contact,
       isCustomer: true,
     });
   } else {
     newUser = new User({
-      username: req.body.username,
+      username: username,
       hash: hash,
       salt: salt,
-      custname: req.body.custname,
-      contact: req.body.contact,
-      service: req.body.service,
-      city: req.body.city,
-      experience: req.body.experience,
+      custname: custname,
+      contact: contact,
+      service: service,
+      city: city,
+      experience: experience,
       isProvider: true,
       providerImage: providerImage,
       speciality1: specialities[0] || '',
@@ -87,30 +93,14 @@ router.post("/register", upload, (req, res) => {
   }
 
   newUser
-    .save()
-    .then((result) => {
-      console.log("..");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  res.redirect("/login");
-  // }
-
-  // else{
-  //     const newProvider = new Service({
-  //         username: req.body.username,
-  //         hash: hash,
-  //         salt: salt,
-  //     })
-
-  //     newProvider.save().then((result) => {
-  //         res.redirect("/home/provider")
-  //     }).catch((err) => {
-  //         console.log(err)
-  //     })
-  // }
+  .save()
+  .then((result) => {
+    res.redirect("/login");
+  })
+  .catch((err) => {
+    console.error(err);
+    res.render("register", { error: "Registration failed. Please try again." });
+  });
 });
 
 router.get("/check", (req, res) => {
